@@ -1,7 +1,7 @@
 {
   "name": "kryo-workflows",
   "version": "1.0.0",
-  "description": "Weekly Trigger.dev automation that finds Tampa Bay small-business leads for AI automation services and drops them into ClickUp — deduplicated.",
+  "description": "Weekly Trigger.dev automation that finds small-business leads and drops them into ClickUp, deduplicated.",
   "scripts": {
     "dev": "trigger dev"
   },

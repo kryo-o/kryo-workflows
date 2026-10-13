@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌴 Tampa Bay Lead Finder
+# 📍 Local Lead Finder
 
 **Every Monday at 8am, 25 fresh, verified small-business leads land in your ClickUp — ready to pitch AI automation.**
 
@@ -16,10 +16,10 @@
 
 ## ✨ What it does
 
-A scheduled [Trigger.dev](https://trigger.dev) task that searches Google Maps for established local businesses across the Tampa Bay metro, filters out the ones that aren't a fit, and creates one ClickUp task per lead — **never the same business twice**.
+A scheduled [Trigger.dev](https://trigger.dev) task that searches Google Maps for established local businesses across any metro area you choose, filters out the ones that aren't a fit, and creates one ClickUp task per lead — **never the same business twice**.
 
 - 🎯 **Targeted** — home services, medical/dental/med spa, and professional services: the businesses drowning in missed calls, scheduling, intake and follow-ups.
-- 🏙️ **Wide metro coverage** — Tampa, St. Petersburg, Clearwater, Brandon, Largo, Wesley Chapel, Lakeland, Sarasota, Bradenton, New Port Richey.
+- 🏙️ **Any metro area** — list the cities you want covered; ships with a 10-city example config.
 - ✅ **Pre-qualified** — operational, has a website *and* phone, 10–300 Google reviews (real budget, not a national chain).
 - 🔁 **Rotates searches weekly** — 13 categories × 10 cities = 130 combinations, cycled so each week digs somewhere new.
 - 🧹 **Duplicate-proof** — checks before creating *and* audits the whole list after every run.
@@ -115,7 +115,7 @@ Then trigger `find-tampa-leads` from the dashboard's **Test** page.
 
 ### 4. Deploy
 
-Pushing to `master` deploys automatically via GitHub Actions ([`deploy.yml`](.github/workflows/deploy.yml)). Add a Trigger.dev personal access token as the `TRIGGER_ACCESS_TOKEN` repository secret first.
+Pushing to `main` deploys automatically via GitHub Actions ([`deploy.yml`](.github/workflows/deploy.yml)). Add a Trigger.dev personal access token as the `TRIGGER_ACCESS_TOKEN` repository secret first.
 
 ## ⚙️ Customize
 
@@ -127,7 +127,7 @@ Everything lives at the top of [`src/trigger/tampa-leads/find-leads.ts`](src/tri
 | `MAX_SEARCHES` | `15` | Google searches per run (cost cap) |
 | `MIN_REVIEWS` / `MAX_REVIEWS` | `10` / `300` | Business size filter |
 | `CATEGORIES` | 13 types | What to search for |
-| `CITIES` | 10 cities | Where to search |
+| `CITIES` | 10 example cities | Where to search — `"City, ST"` format |
 | `cron` | `0 8 * * 1` (America/New_York) | When to run |
 
 > Keep the number of categories and cities coprime (e.g. 13 and 10) so the weekly rotation reaches every combination.
@@ -139,7 +139,7 @@ Everything lives at the top of [`src/trigger/tampa-leads/find-leads.ts`](src/tri
 ├── src/trigger/tampa-leads/
 │   └── find-leads.ts          # The scheduled task
 ├── .github/workflows/
-│   └── deploy.yml             # Auto-deploy on push to master
+│   └── deploy.yml             # Auto-deploy on push to main
 ├── trigger.config.ts          # Trigger.dev project config
 └── CHANGELOG.md
 ```
