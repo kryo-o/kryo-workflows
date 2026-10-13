@@ -1,0 +1,5 @@
+.env
+node_modules
+.trigger
+.claude/settings.local.json
+.claude/.cc-writes
