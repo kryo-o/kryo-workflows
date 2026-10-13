@@ -107,7 +107,7 @@ Add the same three variables in the **Trigger.dev dashboard → Environment Vari
 ### 3. Test locally
 
 ```bash
-npx trigger.dev@4.4.0 login   # first time only
+npx trigger login   # first time only
 npm run dev
 ```
 

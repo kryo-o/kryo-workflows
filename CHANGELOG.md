@@ -8,6 +8,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and thi
 ### Changed
 - Location is now fully configurable: cities use `"City, ST"` format and the search query no longer hardcodes the state.
 - README and package description are location-generic so the project can be reused for any metro area.
+- Deploy workflow runs on `main`, uses the lockfile-pinned CLI, and upgrades to `actions/checkout@v5` / `actions/setup-node@v5`.
+
+### Security
+- Upgraded `@trigger.dev/sdk` and `trigger.dev` 4.4.0 → 4.7.3 (pinned exactly).
+- npm `overrides` force patched `ws`, `tar` and `deepmerge-ts` in the CLI's dependency tree.
+- Deploy workflow restricted to `permissions: contents: read`.
+- Runtime dependencies: 0 known vulnerabilities. Remaining advisories (`braces`, `esbuild`) are in the dev-only CLI and have no compatible fix yet.
 
 ## [1.0.0] - 2026-10-13
 
