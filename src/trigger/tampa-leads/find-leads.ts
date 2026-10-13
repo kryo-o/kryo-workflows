@@ -21,17 +21,18 @@ const CATEGORIES = [
   "real estate agent",
 ];
 
+// "City, ST" — edit for your own metro
 const CITIES = [
-  "Tampa",
-  "St. Petersburg",
-  "Clearwater",
-  "Brandon",
-  "Largo",
-  "Wesley Chapel",
-  "Lakeland",
-  "Sarasota",
-  "Bradenton",
-  "New Port Richey",
+  "Tampa, FL",
+  "St. Petersburg, FL",
+  "Clearwater, FL",
+  "Brandon, FL",
+  "Largo, FL",
+  "Wesley Chapel, FL",
+  "Lakeland, FL",
+  "Sarasota, FL",
+  "Bradenton, FL",
+  "New Port Richey, FL",
 ];
 
 // Hosts shared by many unrelated businesses — never treat as a dedupe key
@@ -142,7 +143,7 @@ export const findTampaLeads = schedules.task({
     for (let i = week * MAX_SEARCHES; searches < MAX_SEARCHES && createdIds.size < TARGET_LEADS; i++, searches++) {
       const category = CATEGORIES[i % CATEGORIES.length];
       const city = CITIES[i % CITIES.length];
-      const places = await searchPlaces(`${category} in ${city}, FL`, placesKey);
+      const places = await searchPlaces(`${category} in ${city}`, placesKey);
       let added = 0;
 
       for (const p of places) {

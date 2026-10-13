@@ -126,7 +126,7 @@ Wait for the user to say "push it", "deploy", "ship it", or similar before touch
 - [ ] **User has explicitly confirmed** the automation works and approved the deploy
 - [ ] `.env` is in `.gitignore`
 
-**Deploy**: push to `master` — GitHub Actions auto-deploys via `.github/workflows/deploy.yml`
+**Deploy**: push to `main` — GitHub Actions auto-deploys via `.github/workflows/deploy.yml`
 
 **After deploying:**
 
